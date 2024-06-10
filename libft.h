@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 20:47:13 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/10 21:16:28 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/10 21:23:15 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define LIBFT_H
 
 int	ft_isalpha(char c);
+int	ft_isdigit(char c);
 
 #endif
