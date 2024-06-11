@@ -6,15 +6,11 @@
 /*   By: despanad <despanad@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 21:18:44 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/10 21:25:38 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/11 22:34:21 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(char c)
 {
-	if (c >= '0' && c <= '9')
-	{
-		return (1);
-	}
-	return (0);
+	return (c >= '0' && c <= '9');
 }

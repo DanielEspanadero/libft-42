@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 21:23:30 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/10 21:24:54 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/11 22:35:03 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 int	ft_isalnum(char c)
 {
-	if (ft_isalpha(c) && ft_isdigit(c))
-	{
-		return (1);
-	}
-	return (0);
+	return (ft_isalpha(c) && ft_isdigit(c));
 }
