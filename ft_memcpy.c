@@ -6,10 +6,9 @@
 /*   By: despanad <despanad@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 19:02:37 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/13 23:57:33 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/13 23:57:59 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
