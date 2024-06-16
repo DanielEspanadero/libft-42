@@ -6,9 +6,12 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 03:25:34 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/15 04:30:32 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/16 20:32:01 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+#include <stddef.h>
 
 void	*memmove(void *dest, const void *src, size_t n)
 {
