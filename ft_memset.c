@@ -6,9 +6,13 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 22:56:47 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/11 23:12:21 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/16 20:38:02 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+#include <stddef.h>
 
 void	*ft_memset(void *ptr, int c, size_t n)
 {
