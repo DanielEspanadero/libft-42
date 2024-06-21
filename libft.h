@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:54:51 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/17 20:06:46 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:32:10 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	*ft_calloc(size_t nmemb, size_t size);
 int	ft_isalpha(int param);
 int	ft_isprint(int param);
 int	ft_atoi(char *str);
-char	*ft_tolower(char *str);
+int	ft_tolower(int str);
 int	ft_strncmp(char *s1, char *s2, size_t n);
-char	*ft_toupper(char *str);
+int	ft_toupper(int str);
 int	ft_memcmp(void *s1, void *s2, size_t n);
 char	*ft_strchr(char *str, int c);
 int	ft_isdigit(int param);
