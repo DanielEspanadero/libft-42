@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:54:51 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/21 19:32:10 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/25 22:14:56 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_substr(char *s, size_t start, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
 int	ft_isalpha(int param);
 int	ft_isprint(int param);
-int	ft_atoi(char *str);
+int	ft_atoi(char *nptr);
 int	ft_tolower(int str);
 int	ft_strncmp(char *s1, char *s2, size_t n);
 int	ft_toupper(int str);
