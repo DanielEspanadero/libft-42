@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:54:51 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/25 22:14:56 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/26 21:06:49 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlen(char *str);
 char	*str_join(char *s1, char *s2);
 void	*memove(void *dest, void *src, size_t n);
 int	ft_isascii(int param);
-char	*ft_substr(char *s, size_t start, size_t len);
+char	*ft_substr(char *s, unsigned int start, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
 int	ft_isalpha(int param);
 int	ft_isprint(int param);
