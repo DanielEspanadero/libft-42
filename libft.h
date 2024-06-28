@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:54:51 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/26 21:06:49 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/28 22:36:51 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ void	ft_bzero(void *s, int n);
 int	ft_isalnum(char *str);
 void	*ft_memcpy(void *dest, void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif
