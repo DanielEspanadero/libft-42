@@ -6,13 +6,13 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:04:11 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/25 22:15:29 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/29 20:13:22 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_is_whitespace(char c)
+static int	ft_is_whitespace(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\n' || \
 	c == '\v' || c == '\f' || c == '\r');
@@ -29,7 +29,7 @@ int	ft_atoi(char *nptr)
 		nptr++;
 	if (*nptr == '-')
 		sign = -1;
-	if (*nptr  == '-' || *nptr == '+')
+	if (*nptr == '-' || *nptr == '+')
 		nptr++;
 	while ((*nptr != '\0' && ft_isdigit(*nptr)))
 	{

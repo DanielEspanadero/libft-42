@@ -6,24 +6,24 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 06:11:58 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/17 20:28:58 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/29 19:56:37 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t strlcpy(char *dst, char *src, size_t dstsize)
+size_t	strlcpy(char *dst, char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	len;
 
 	len = ft_strlen(src);
-	if(dstsize < 1)
+	if (dstsize < 1)
 	{
 		return (len);
 	}
 	i = 0;
-	while(src[i] != '\0' && i < (dstsize - 1))
+	while (src[i] != '\0' && i < (dstsize - 1))
 	{
 		dst[i] = src[i];
 		i++;

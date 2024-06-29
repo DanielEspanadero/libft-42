@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:20:41 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/23 19:54:10 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/29 20:11:48 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(char *haystack, char *needle, size_t len)
 		n = 0;
 		while (haystack[h + n] == needle[n] && (h + n) < len)
 		{
-			if(haystack[h + n] == '\0' && needle[n] == '\0')
+			if (haystack[h + n] == '\0' && needle[n] == '\0')
 				return ((char *) haystack + h);
 			n++;
 		}
