@@ -6,10 +6,9 @@
 /*   By: despanad <despanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 20:07:48 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/18 20:59:10 by despanad         ###   ########.fr       */
+/*   Updated: 2024/06/29 19:53:43 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -22,9 +21,9 @@ size_t	ft_strlcat(char *dst, char *src, size_t dst_size)
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	i = 0;
-	if(dst_size == 0)
+	if (dst_size == 0)
 		return (src_len);
-	if(dst_size < dst_len)
+	if (dst_size < dst_len)
 		return (src_len += dst_len);
 	else
 		src_len += dst_len;
