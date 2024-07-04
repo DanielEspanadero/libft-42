@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 14:01:20 by despanad          #+#    #+#             */
-/*   Updated: 2024/07/04 22:27:00 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/04 23:33:38 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static void	split_str(char **ptr, char *str, char c, int nwords)
 	}
 }
 
-char	**ft_split(char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	int		nwords;
 	char	**ptr;

@@ -6,13 +6,13 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 22:28:53 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/29 20:21:08 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/04 23:24:17 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(char *s)
+char	*ft_strdup(char *s)
 {
 	char	*ptr;
 	int		size;

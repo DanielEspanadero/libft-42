@@ -6,13 +6,13 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:28:52 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/28 14:01:14 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/04 23:36:48 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char *s1, char *set)
+char	*ft_strtrim(const char *s1, char *set)
 {
 	size_t	strat;
 	size_t	end;
