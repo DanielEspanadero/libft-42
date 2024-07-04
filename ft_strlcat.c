@@ -6,33 +6,25 @@
 /*   By: despanad <despanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 20:07:48 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/29 19:53:43 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/04 23:58:13 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, char *src, size_t dst_size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
+	size_t	dl;
+	size_t	sl;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	i = 0;
-	if (dst_size == 0)
-		return (src_len);
-	if (dst_size < dst_len)
-		return (src_len += dst_len);
+	sl = ft_strlen(src);
+	if (dstsize == 0 && dst == NULL)
+		return (sl);
+	dl = ft_strlen(dst);
+	if (dl < dstsize)
+		dstsize -= dl;
 	else
-		src_len += dst_len;
-	while (src[i] != '\0' && dst_len < dst_size -1 && dst != src)
-	{
-		dst[dst_len] = src[i];
-		i++;
-		dst_len++;
-	}
-	dst[dst_len] = '\0';
-	return (src_len);
+		return (sl + dstsize);
+	ft_strlcpy(dst + dl, src, dstsize);
+	return (dl + sl);
 }
