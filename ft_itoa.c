@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 18:11:21 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/28 18:21:22 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/04 22:16:53 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static int	count_char(int num)
 			count++;
 		}
 	}
-		else
-			count = 1;
-		return (count);
+	else
+		count = 1;
+	return (count);
 }
 
 char	*ft_itoa(int n)
@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 	nbr = n;
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
-	return (0);
+		return (0);
 	if (nbr < 0)
 	{
 		str[0] = '-';
