@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 18:23:46 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/28 18:28:58 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/04 22:28:09 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 	int		i;
 	char	*str;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
