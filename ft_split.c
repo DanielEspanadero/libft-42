@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 14:01:20 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/28 15:27:01 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/04 22:27:00 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	*ft_free(char **memry, size_t aux)
 
 static void	split_str(char **ptr, char *str, char c, int nwords)
 {
-	int	i;
+	int		i;
 	char	*aux;
 
 	i = 0;
@@ -63,7 +63,7 @@ static void	split_str(char **ptr, char *str, char c, int nwords)
 			if (ptr == 0)
 			{
 				ft_free(ptr, i);
-				return;
+				return ;
 			}
 			while (*aux == c)
 				aux++;
