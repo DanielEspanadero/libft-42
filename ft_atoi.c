@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:04:11 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/29 20:13:22 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/04 22:13:34 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_is_whitespace(char c)
 
 int	ft_atoi(char *nptr)
 {
-	int	sign;
+	int					sign;
 	unsigned long int	result;
 
 	sign = 1;
