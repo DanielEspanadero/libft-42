@@ -19,14 +19,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(LIB) rcs $(NAME) $(OBJ)
 
-bonus: $(NAME) $(BONUS_OBJ)
-	$(LIB) r $(NAME) $(BONUS_OBJ)
-
 %.o: %.c $(INCLUDE)
 	$(CC) $(CCFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	$(RM) -f $(OBJECTS)
 
 fclean: clean
 	$(RM) $(NAME)

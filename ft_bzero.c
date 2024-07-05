@@ -6,13 +6,13 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 23:16:01 by despanad          #+#    #+#             */
-/*   Updated: 2024/06/25 21:21:16 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/05 10:57:46 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }

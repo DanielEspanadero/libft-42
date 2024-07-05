@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:54:51 by despanad          #+#    #+#             */
-/*   Updated: 2024/07/05 00:05:36 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/05 11:18:10 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(char *str, char *to_find, size_t len);
 size_t	ft_strlen(const char *str);
 char	*ft_strjoin(char *s1, char *s2);
-void	*ft_memove(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 int		ft_isascii(int param);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
@@ -38,7 +38,7 @@ char	*ft_strchr(const char *str, int c);
 int		ft_isdigit(int c);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-void	ft_bzero(void *s, int n);
+void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
@@ -48,7 +48,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	**ft_split(const char *s, char c);
 char	*ft_strtrim(const char *s1, char *set);
-void	*memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(void *s, int c, size_t n);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char *s, char (*f)(unsigned int, char));
