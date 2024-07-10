@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:54:51 by despanad          #+#    #+#             */
-/*   Updated: 2024/07/05 11:18:10 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/10 19:38:41 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stddef.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 char	*ft_strdup(char *str);
 char	*ft_strrchr(const char *s, int c);
