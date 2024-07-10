@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:20:06 by despanad          #+#    #+#             */
-/*   Updated: 2024/07/10 20:31:34 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/10 20:37:34 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	count_words(char *s, char c)
 
 	cwords = 0;
 	if (!*s)
-		return 0;
+		return (0);
 	while (*s)
 	{
 		if (*s == c)
@@ -31,7 +31,20 @@ static int	count_words(char *s, char c)
 			s++;
 	}
 	cwords++;
-	return cwords;
+	return (cwords);
+}
+
+static void	ft_free(char **memory, size_t aux)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < aux)
+	{
+		free(memory[i]);
+		i++;
+	}
+	free(memory);
 }
 
 char	**ft_split(char const *s, char c)
