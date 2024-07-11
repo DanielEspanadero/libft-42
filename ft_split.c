@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:20:06 by despanad          #+#    #+#             */
-/*   Updated: 2024/07/11 22:06:29 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/11 22:44:42 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	count_words(char *s, char c)
 		{
 			cwords++;
 			while (*s == c)
-			s++;
+				s++;
 		}
 		else
 			s++;
@@ -47,48 +47,48 @@ static void	ft_free(char **memory, size_t aux)
 	free(memory);
 }
 
-static void split_str(char **ptr, char *str, char c, char nwords)
+static void	split_str(char **ptr, char *str, char c, char nwords)
 {
 	int		i;
-	char	aux;
+	char	*aux;
 
 	i = 0;
-	if ((nwords > 0) && *str)
+	while (i < nwords && *str)
 	{
-		while (i < nwords - 1)
+		aux = ft_strchr(str, c);
+		if (aux == NULL)
 		{
-			aux = ft_strchr(str, c);
-			ptr[i] = ft_substr(str, 0 aux - str);
+			ptr[i] = ft_strdup(str);
 			if (ptr[i] == NULL)
 			{
 				ft_free(ptr, i);
-				return;
+				return ;
 			}
-			i++;
-			while (*aux == c)
-				aux++;
-			str = aux;
+			break ;
 		}
-		ptr[i] = ft_strdup(str);
+		ptr[i] = ft_substr(str, 0, aux - str);
 		if (ptr[i] == NULL)
 		{
 			ft_free(ptr, i);
-			return;
+			return ;
 		}
-		ptr[i + 1] = NULL;
+		i++;
+		str = aux + 1;
+		while (*str == c)
+			str++;
 	}
+	ptr[i] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int	nwords;
+	int		nwords;
 	char	**ptr;
 	char	*str;
 	char	a[2];
 
 	a[0] = c;
 	a[1] = '\0';
-
 	if (s)
 	{
 		str = ft_strtrim(s, a);
@@ -99,8 +99,8 @@ char	**ft_split(char const *s, char c)
 			if (ptr)
 				split_str(ptr, str, c, nwords);
 			free(str);
-			return ptr;
+			return (ptr);
 		}
 	}
-	return NULL;
+	return (NULL);
 }
