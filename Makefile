@@ -10,12 +10,17 @@ SRC = ft_strlen.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c \
       ft_memcmp.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
       ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
       ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+
 OBJ = $(SRC:.c=.o)
 
 INCLUDE = libft.h
 
 AR = ar rcs
 RM = rm -f
+
+BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c\
+ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 .PHONY: all clean fclean re
 
@@ -24,11 +29,14 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $@ $^
 
+bonus: $(NAME) $(BONUS_OBJ)
+	$(AR) r $(NAME) $(BONUS_OBJ)
+
 %.o: %.c $(INCLUDE)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
