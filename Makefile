@@ -30,7 +30,7 @@ $(NAME): $(OBJ)
 	$(AR) $@ $^
 
 bonus: $(NAME) $(BONUS_OBJ)
-	$(AR) r $(NAME) $(BONUS_OBJ)
+	$(AR) $(NAME) $(BONUS_OBJ)
 
 %.o: %.c $(INCLUDE)
 	$(CC) $(CFLAGS) -c -o $@ $<

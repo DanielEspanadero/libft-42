@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 23:10:57 by despanad          #+#    #+#             */
-/*   Updated: 2024/07/11 23:11:00 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/13 03:12:37 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,10 @@ char	**ft_split(char const *s, char c)
 	char		**ptr;
 	size_t		i;
 
-	if (!s)
-		return (NULL);
 	str = s;
 	ptr = (char **) malloc ((word_count(s, c) + 1) * sizeof (char *));
+	if (!ptr)
+		return (NULL);
 	i = 0;
 	while (*s != '\0' && ptr)
 	{
