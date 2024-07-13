@@ -6,7 +6,7 @@
 /*   By: despanad <despanad@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 01:44:18 by despanad          #+#    #+#             */
-/*   Updated: 2024/07/13 02:37:33 by despanad         ###   ########.fr       */
+/*   Updated: 2024/07/13 19:46:27 by despanad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	result = NULL;
 	while (lst)
 	{
-		temp = ft_lstnew((*f)(lst->content));
+		temp = ft_lstnew(f(lst->content));
 		if (!temp)
 		{
 			ft_lstclear(&result, del);
