@@ -41,7 +41,7 @@ Hay 4 secciones:
 ### Makefile
 
 <a href='https://www.youtube.com/watch?v=BD0giwqBbm0' target='_blank'>
-  <img width='30%' src='hhttps://raw.githubusercontent.com/DanielEspanadero/libft-42/master/docs/makefile.webp?token=GHSAT0AAAAAACS7Z5FREBBZAZQMTWLRFT3QZUUDI6A' alt='Makefile' />
+  <img width='30%' src='https://github.com/DanielEspanadero/libft-42/blob/master/docs/makefile.png' alt='Makefile' />
 </a>
 
 ### Listas enlazadas
