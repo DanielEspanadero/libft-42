@@ -1,6 +1,6 @@
 # 💻📚 LIBFT 📚💻
 
-![image]()
+![image](https://github.com/DanielEspanadero/libft-42/blob/master/docs/banner%20libft.png)
 
 Este es el primer proyecto como estudiante de 42. Consiste en programar algunas funciones de la librería estándar de C, así como otras funciones que serán útiles a lo largo de todo el cursus.
 
