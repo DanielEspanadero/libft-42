@@ -29,19 +29,19 @@ Hay 4 secciones:
 ### Punteros en C
 
 <a href='https://www.youtube.com/watch?v=y3K3jb3wv2I' target='_blank'>
-  <img width='30%' src='https://i.ytimg.com/vi/I3S3_0_3xCc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDNFd9Eb9sCTU8yZ7qOnegzvKkdhw' alt='Punteros en C' />
+  <img width='30%' src='https://github.com/DanielEspanadero/libft-42/blob/master/docs/Punteros%20en%20c.jpg' alt='Punteros en C' />
 </a>
 
 ### Struct en C
 
 <a href='https://www.youtube.com/watch?v=plTYF-btLuU' target='_blank'>
-  <img width='30%' src='https://i.ytimg.com/vi/I3S3_0_3xCc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDNFd9Eb9sCTU8yZ7qOnegzvKkdhw' alt='struct en c' />
+  <img width='30%' src='https://github.com/DanielEspanadero/libft-42/blob/master/docs/estructuras%20en%20c.jpg' alt='struct en c' />
 </a>
 
 ### Makefile
 
 <a href='https://www.youtube.com/watch?v=BD0giwqBbm0' target='_blank'>
-  <img width='30%' src='https://i.ytimg.com/vi/I3S3_0_3xCc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDNFd9Eb9sCTU8yZ7qOnegzvKkdhw' alt='Makefile' />
+  <img width='30%' src='hhttps://raw.githubusercontent.com/DanielEspanadero/libft-42/master/docs/makefile.webp?token=GHSAT0AAAAAACS7Z5FREBBZAZQMTWLRFT3QZUUDI6A' alt='Makefile' />
 </a>
 
 ### Listas enlazadas
