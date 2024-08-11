@@ -154,15 +154,298 @@ int	ft_isprint(int c)
 ___
 
 ## ft_lstadd_back
-## ft_lstadd_front
-## ft_lstclear
-## ft_lstdelone
-## ft_lstiter
-## ft_lstlast
-## ft_lstmap
-## ft_lstnew
-## ft_lstsize
+### Description
 
+La función `ft_lstadd_back` añade un nuevo elemento al final de una lista enlazada. Toma dos parámetros: un puntero al primer elemento de la lista (`lst`) y un puntero al nuevo elemento a añadir (`new`). Si la lista está vacía, el nuevo elemento se convierte en el primer elemento de la lista. Si alguno de los parámetros es `NULL`, la función no realiza ninguna operación.
+
+### Param 1
+
+Un puntero doble a la lista enlazada (`t_list **lst`), que apunta al primer elemento de la lista. Si la lista está vacía, el valor apuntado por `lst` debe ser `NULL`.
+
+### Param 2
+
+Un puntero al nuevo elemento a añadir (`t_list *new`). Este elemento será añadido al final de la lista enlazada.
+
+### Return value
+
+Esta función no devuelve un valor.
+
+### Function
+```c
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*last;
+
+	if (lst == NULL || new == NULL)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	last = ft_lstlast(*lst);
+	new->next = last->next;
+	last->next = new;
+}
+```
+
+## ft_lstadd_front
+### Description
+
+La función `ft_lstadd_front` añade un nuevo elemento al principio de una lista enlazada. Toma dos parámetros: un puntero al primer elemento de la lista (`lst`) y un puntero al nuevo elemento a añadir (`new`). Si la lista está vacía, el nuevo elemento se convierte en el primer elemento de la lista. Si alguno de los parámetros es `NULL`, la función no realiza ninguna operación.
+
+### Param 1
+
+Un puntero doble a la lista enlazada (`t_list **lst`), que apunta al primer elemento de la lista. Si la lista está vacía, el valor apuntado por `lst` debe ser `NULL`.
+
+### Param 2
+
+Un puntero al nuevo elemento a añadir (`t_list *new`). Este elemento será añadido al principio de la lista enlazada.
+
+### Return value
+
+Esta función no devuelve un valor.
+
+### Function
+
+```c
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (lst == NULL || new == NULL)
+		return ;
+	new->next = *lst;
+	*lst = new;
+}
+```
+
+## ft_lstclear
+### Description
+
+La función `ft_lstclear` elimina y libera la memoria de todos los elementos de una lista enlazada, aplicando la función dada `del` a los datos de cada elemento. Toma dos parámetros: un puntero al primer elemento de la lista (`lst`) y una función para eliminar los datos de cada elemento (`del`). Después de la ejecución, el puntero a la lista (`lst`) es establecido a `NULL`.
+
+### Param 1
+
+Un puntero doble a la lista enlazada (`t_list **lst`), que apunta al primer elemento de la lista. Después de limpiar la lista, este puntero será establecido a `NULL`.
+
+### Param 2
+
+Un puntero a una función (`void (*del)(void *)`) que se utiliza para eliminar los datos de cada elemento de la lista. Esta función recibe un puntero a los datos y no devuelve un valor.
+
+### Return value
+
+Esta función no devuelve un valor.
+
+### Function
+
+```c
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*curr;
+	t_list	*next;
+
+	curr = *lst;
+	while (curr)
+	{
+		next = curr->next;
+		ft_lstdelone(curr, del);
+		curr = next;
+	}
+	*lst = NULL;
+}
+```
+
+## ft_lstdelone
+### Description
+
+La función `ft_lstdelone` elimina y libera un elemento específico de una lista enlazada. Toma dos parámetros: un puntero al elemento a eliminar (`lst`) y una función para eliminar los datos del elemento (`del`). La función `del` se aplica a los datos del elemento antes de liberar la memoria del propio elemento.
+
+### Param 1
+
+Un puntero al elemento de la lista que se va a eliminar (`t_list *lst`). Este puntero no debe ser `NULL`.
+
+### Param 2
+
+Un puntero a una función (`void (*del)(void *)`) que se utiliza para eliminar los datos del elemento. Esta función recibe un puntero a los datos del elemento y no devuelve un valor. El puntero `del` no debe ser `NULL`.
+
+### Return value
+
+Esta función no devuelve un valor.
+
+### Function
+
+```c
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (lst == NULL || del == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
+}
+```
+
+## ft_lstiter
+### Description
+
+La función `ft_lstiter` itera sobre cada elemento de una lista enlazada y aplica una función a los datos de cada elemento. Toma dos parámetros: un puntero al primer elemento de la lista (`lst`) y una función para aplicar a los datos de cada elemento (`f`). La función `f` se llama para cada elemento de la lista en orden.
+
+### Param 1
+
+Un puntero al primer elemento de la lista enlazada (`t_list *lst`). Este puntero no debe ser `NULL`.
+
+### Param 2
+
+Un puntero a una función (`void (*f)(void *)`) que se aplica a los datos de cada elemento. Esta función recibe un puntero a los datos del elemento y no devuelve un valor. El puntero `f` no debe ser `NULL`.
+
+### Return value
+
+Esta función no devuelve un valor.
+
+### Function
+
+```c
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	if (lst == NULL || f == NULL)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
+}
+```
+
+## ft_lstlast
+### Description
+
+La función `ft_lstlast` devuelve un puntero al último elemento de una lista enlazada. Toma un parámetro: un puntero al primer elemento de la lista (`lst`). La función recorre la lista hasta encontrar el último elemento y lo devuelve. Si la lista está vacía (es decir, el puntero es `NULL`), la función devuelve `NULL`.
+
+### Param 1
+
+Un puntero al primer elemento de la lista enlazada (`t_list *lst`). Si la lista está vacía, este puntero puede ser `NULL`.
+
+### Return value
+
+Un puntero al último elemento de la lista (`t_list *`). Si la lista está vacía, devuelve `NULL`.
+
+### Function
+
+```c
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
+}
+```
+
+## ft_lstmap
+### Description
+
+La función `ft_lstmap` crea una nueva lista enlazada aplicando una función a cada elemento de una lista existente. Toma tres parámetros: un puntero al primer elemento de la lista original (`lst`), una función para aplicar a los datos de cada elemento (`f`), y una función para eliminar los elementos en caso de error (`del`). La función `f` transforma los datos de cada elemento, y la nueva lista se construye con los resultados. Si la función `ft_lstnew` falla al crear un nuevo elemento, se libera la memoria de la lista creada hasta ese momento usando `ft_lstclear`.
+
+### Param 1
+
+Un puntero al primer elemento de la lista original (`t_list *lst`). Este puntero no debe ser `NULL`.
+
+### Param 2
+
+Un puntero a una función (`void *(*f)(void *)`) que transforma los datos de cada elemento. Esta función recibe un puntero a los datos del elemento y devuelve un nuevo puntero a los datos transformados. El puntero `f` no debe ser `NULL`.
+
+### Param 3
+
+Un puntero a una función (`void (*del)(void *)`) que se usa para eliminar los datos de los elementos en caso de fallo. Esta función recibe un puntero a los datos del elemento y no devuelve un valor. El puntero `del` no debe ser `NULL`.
+
+### Return value
+
+Un puntero al primer elemento de la nueva lista (`t_list *`). Si ocurre un error durante la creación de la lista, se devuelve `NULL`.
+
+### Function
+
+```c
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*result;
+	t_list	*temp;
+
+	if (lst == NULL || f == NULL)
+		return (NULL);
+	result = NULL;
+	while (lst)
+	{
+		temp = ft_lstnew(f(lst->content));
+		if (!temp)
+		{
+			ft_lstclear(&result, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&result, temp);
+		lst = lst->next;
+	}
+	return (result);
+}
+```
+
+## ft_lstnew
+### Description
+
+La función `ft_lstnew` crea un nuevo elemento para una lista enlazada. Inicializa el nuevo elemento con el contenido dado y establece su puntero `next` a `NULL`. Toma un parámetro: un puntero al contenido del nuevo elemento (`content`). Si la asignación de memoria falla, la función devuelve `NULL`.
+
+### Param 1
+
+Un puntero a los datos que se asignarán al nuevo elemento de la lista (`void *content`). Este puntero puede ser `NULL`.
+
+### Return value
+
+Un puntero al nuevo elemento de la lista (`t_list *`). Si ocurre un error al asignar memoria, se devuelve `NULL`.
+
+### Function
+
+```c
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new;
+
+	new = (t_list *)malloc(sizeof(t_list));
+	if (new == NULL)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
+}
+```
+
+## ft_lstsize
+### Description
+
+La función `ft_lstsize` calcula el número de elementos en una lista enlazada. Toma un parámetro: un puntero al primer elemento de la lista (`lst`). La función recorre la lista desde el primer elemento hasta el último, contando el número de elementos, y devuelve este conteo.
+
+### Param 1
+
+Un puntero al primer elemento de la lista enlazada (`t_list *lst`). Este puntero puede ser `NULL` si la lista está vacía.
+
+### Return value
+
+El número de elementos en la lista (`int`). Si la lista está vacía, devuelve `0`.
+
+### Function
+
+```c
+int	ft_lstsize(t_list *lst)
+{
+	int	size;
+
+	size = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		size++;
+	}
+	return (size);
+}
+```
 
 # ft_mem
 ___
