@@ -1,19 +1,45 @@
 NAME = libft.a
 
+INCLUDES = ../includes
+SRCS_DIR 	=	src/
+OBJS_DIR	=	obj/
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I$(INCLUDES)
 
-SRC = ft_strlen.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c \
-      ft_isprint.c ft_toupper.c ft_tolower.c ft_strlcpy.c ft_strlcat.c \
-      ft_strncmp.c ft_strnstr.c ft_atoi.c ft_strchr.c ft_strrchr.c \
-      ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_memchr.c \
-      ft_memcmp.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
-      ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-      ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+FTIS_DIR	=	ft_is/
+FTIS		=	ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint
 
-OBJ = $(SRC:.c=.o)
+FTMEM_DIR	=	ft_mem/
+FTMEM		=	ft_bzero ft_calloc ft_memchr ft_memcmp ft_memmove ft_memset
 
-INCLUDE = libft.h
+FTPUT_DIR	=	ft_put/
+FTPUT		=	ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
+
+FTTO_DIR	=	ft_to/
+FTTO		=	ft_atoi ft_itoa ft_tolower ft_toupper
+
+FTSTR_DIR	=	ft_str/
+FTSTR		=	ft_split ft_strchr ft_strdup ft_striteri ft_strjoin \
+				ft_strlcat ft_strlcpy ft_strlen ft_strmapi ft_strncmp \
+				ft_strnstr ft_strrchr ft_strtrim ft_substr
+
+FTLST_DIR	=	ft_lst/
+FTLST		=	ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
+				ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
+
+SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
+SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
+SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
+SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
+SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
+SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
+
+SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
+
+OBJSF		=	.cache_exists
+
+OBJ = $(SRCS:.c=.o)
 
 AR = ar rcs
 RM = rm -f
@@ -22,24 +48,34 @@ BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstl
 ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re norm
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJS)
 	$(AR) $@ $^
 
-bonus: $(NAME) $(BONUS_OBJ)
-	$(AR) $(NAME) $(BONUS_OBJ)
+$(OBJS_DIR)%.o : $(SRCS_DIR)%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-%.o: %.c $(INCLUDE)
-	$(CC) $(CFLAGS) -c -o $@ $<
+$(OBJSF):
+	@mkdir -p $(OBJS_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTIS_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTMEM_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTPUT_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTTO_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTSTR_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTLST_DIR)
 
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	@$(RM) -rf $(OBJS_DIR)
+	@$(RM) -f $(OBJSF)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
+norm:
+	@norminette $(SRCS) $(INCLUDES) | grep -v Norme -B1 || true
